@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yoga!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <header>
+          <h1>Yoga Resources</h1>
+        </header>
+        <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Yoga Style Quiz</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div id="main-content">
+    <div class="container">
+      <h1>Portland Session Selector</h1>
+      <p>Please select your preferences below: </p>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <select class="input-lg" name="location">
+            <option value="nw">Northwest</option>
+            <option value="sw">Southwest</option>
+            <option value="ne">Northeast</option>
+            <option value="se">Southeast</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time">Time:</label>
+          <select class="input-lg" name="location">
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="style">Style:</label>
+          <select class="input-lg" name="location">
+            <option value="yin">Yin</option>
+            <option value="hatha">Hatha</option>
+            <option value="vinyasa">Vinyasa</option>
+          </select>
+        </div>
+
+        <button type="submit" name="button" class="btn btn-primary btn-lg">Find a class</button>
+      </form>
+
+      <div class="output">
+        <ul>
+          <span id="result"></span>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
