@@ -11,8 +11,12 @@ header {
   text-align: center;
 }
 
-p{
+#note{
   font-size: 15px;
+}
+
+p {
+  font-size: 20px;
 }
 
 h1 {
@@ -38,5 +42,10 @@ h2 {
 }
 
 #fullInfo {
+  display: none;
+}
+
+/*Hide quiz results divs*/
+#result1, #result2, #result3, #result4 {
   display: none;
 }
