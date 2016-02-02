@@ -19,19 +19,26 @@ $(document).ready(function(){
   var style = $("select#inputStyle").val();
   var className = $("input#inputClassName").val();
   var instructor = $("input#inputInstructor").val();
-debugger;
+
   var newSession = new Session(studio, level, style, className, instructor);
   $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
    $(".sessionItem").last().click(function() {
-     $("#fullInfo").show();
-     $("#studio").text(newSession.studio);
-     $("#level").text(newSession.level);
-     $("#style").text(newSession.style);
-     $("#className").text(newSession.className);
-     $("#instructor").text(newSession.instructor);
+
+    //  debugger;
+     //launch modal upon click
+
+     $('#myModal').modal('show');
+     $("#fullInfo").show(); //within the modal, show #fullInfo
+     $("#studio").text(newSession.studio); //within the modal, populate #studio
+     $("#level").text(newSession.level); //within the modal, populate #level
+     $("#style").text(newSession.style); //within the modal, populate #style
+     $("#className").text(newSession.className); //within the modal, populate #className
+     $("#instructor").text(newSession.instructor); //within the modal, populate #instructor
   });
  });
 });
+
+// data-toggle='modal' data-target='#myModal'
 // var Time = function(day, hour) {
 //   this.day = day;
 //   this.hour = hour;
