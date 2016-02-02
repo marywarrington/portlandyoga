@@ -21,12 +21,12 @@
     </nav>
   <div id="main-content">
     <div class="container">
-      <h1>Portland Session Selector</h1>
-      <p>Please select your preferences below: </p>
+      <h1>Portland Class Session List</h1>
+      <h2>Add a class to our list of Portland yoga classes using the inputs below: </h2>
       <form class="form-horizontal" id="addSession">
         <div class="form-group">
           <label for="studio">Location:</label>
-          <select id="studio" class="input-lg" name="location">
+          <select id="inputStudio" class="input-lg" name="location">
             <option value="Yoga Union">Yoga Union</option>
             <option value="Yoga Pearl">Yoga Pearl</option>
             <option value="Love Hive Yoga">Love Hive Yoga</option>
@@ -35,7 +35,7 @@
         </div>
         <div class="form-group">
           <label for="level">Time:</label>
-          <select id="level" class="input-lg" name="location">
+          <select id="inputLevel" class="input-lg" name="location">
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
@@ -43,19 +43,20 @@
         </div>
         <div class="form-group">
           <label for="style">Style:</label>
-          <select id="style" class="input-lg" name="location">
-            <option value="yin">Yin</option>
-            <option value="hatha">Hatha</option>
-            <option value="vinyasa">Vinyasa</option>
+          <select id="inputStyle" class="input-lg" name="location">
+            <option value="Yin">Yin</option>
+            <option value="Hatha">Hatha</option>
+            <option value="Vinyasa">Vinyasa</option>
           </select>
+            <p>If you don't know which style you'd like to take try taking our <ahref="">style quiz</a>!</p>
         </div>
         <div class="form-group">
             <label for="className">Class Name:</label>
-            <input type="text" class="form-control" id="className">
+            <input type="text" class="form-control" id="inputClassName">
         </div>
         <div class="form-group">
             <label for="instructor">Instructor:</label>
-            <input type="text" class="form-control" id="instructor">
+            <input type="text" class="form-control" id="inputInstructor">
         </div>
 
         <button type="submit" name="button" class="btn btn-primary btn-lg">Add a session</button>
@@ -64,6 +65,14 @@
       <div class="output">
         <ul id="result">
         </ul>
+      </div>
+      <div id="fullInfo">
+        <p id="practiceInfo"></p>
+        <p>Studio: <span id='studio'></span></p>
+        <p>Level: <span id='level'></span></p>
+        <p>Style: <span id='style'></span></p>
+        <p>Class Name: <span id='className'></span></p>
+        <p>Instructor: <span id='instructor'></span></p>
       </div>
     </div>
   </div>

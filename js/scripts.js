@@ -10,18 +10,26 @@ Session.prototype.displayInfo = function() {
   return this.studio + ", " + this.className + ", " + this.instructor;
 }
 
+
 $(document).ready(function(){
   $("form#addSession").submit(function(event){
     event.preventDefault();
-  var studio = $("select#studio").val();
-  var level = $("select#level").val();
-  var style = $("select#style").val();
-  var className = $("input#className").val();
-  var instructor = $("input#instructor").val();
-// debugger;
+  var studio = $("select#inputStudio").val();
+  var level = $("select#inputLevel").val();
+  var style = $("select#inputStyle").val();
+  var className = $("input#inputClassName").val();
+  var instructor = $("input#inputInstructor").val();
+debugger;
   var newSession = new Session(studio, level, style, className, instructor);
-
-  $("ul#result").append("<li>" + newSession.displayInfo() + "</li>");
+  $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
+   $(".sessionItem").last().click(function() {
+     $("#fullInfo").show();
+     $("#studio").text(newSession.studio);
+     $("#level").text(newSession.level);
+     $("#style").text(newSession.style);
+     $("#className").text(newSession.className);
+     $("#instructor").text(newSession.instructor);
+  });
  });
 });
 // var Time = function(day, hour) {
