@@ -77,14 +77,25 @@ $(document).ready(function(){
   });
  });
 
+// We are working here:
  $("form#styleQuiz").submit(function(event) {
    event.preventDefault();
 
-   if (this.winningLetter === "a") {
-     ("#result1").show();
-   } else if (this.winningLetter === "b") {
+//Add variable for array collected from quiz
+   var newQuiz = new Quiz(somethingin here)
+//How do we run the prototype below?
+   newQuiz.quizResult()
 
-   }
+our if/else statements
+   if (this.winningLetter === "a") {
+     $("#result1").show();
+   } else if (this.winningLetter === "b") {
+     $("#result2").show();
+   } else if (this.winningLetter === "c") {
+     $("#result3").show();
+   } else {
+    $("#result4").show();
+    }
  });
 
 });
