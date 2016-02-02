@@ -10,6 +10,49 @@ Session.prototype.displayInfo = function() {
   return this.studio + ", " + this.className + ", " + this.instructor;
 }
 
+var Quiz = function(quizArray) {
+  this.quizArray = quizArray;
+}
+
+Quiz.prototype.quizResult = function() {
+  var aLetter = 0;
+  var bLetter = 0;
+  var cLetter = 0;
+  var dLetter = 0;
+
+  for(i = 0; i < this.quizArray.length(); i++) {
+    if (i === "a") {
+      aLetter += 1;
+    }else if (i === "b") {
+      bLettter += 1;
+    }else if (i === "c") {
+      cLetter += 1;
+    }else {
+      dLetter += 1;
+    }
+  }
+
+  var newArray = [aLetter, bLetter, cLetter, dLetter];
+  var max = newArray[0];
+  var maxIndex = 0;
+
+  for (var i = 1; i < newArray.length; i++) {
+    if (newArray[i] > max) {
+      maxIndex = i;
+      max = newArray[i];
+    }
+  }
+  if (maxIndex === 0) {
+    this.winningLetter = "a";
+  } else if (maxIndex === 1) {
+    this.winningLetter = "b";
+  } else if (maxIndex === 2) {
+    this.winningLetter = "c";
+  } else {
+    this.winningLetter = "d";
+  }
+}
+
 
 $(document).ready(function(){
   $("form#addSession").submit(function(event){
@@ -32,6 +75,9 @@ debugger;
   });
  });
 });
+
+// quiz page
+
 // var Time = function(day, hour) {
 //   this.day = day;
 //   this.hour = hour;

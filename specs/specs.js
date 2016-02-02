@@ -14,6 +14,19 @@ describe('Session', function() {
   });
 });
 
+//Yoga style quiz
+describe('Quiz', function() {
+  it('will capture user input in an array', function() {
+    var newQuiz = new Quiz(["none", "low", "open", "strong", "more", "challenged"]);
+    expect(newQuiz.quizArray).to.eql(["none", "low", "open", "strong", "more", "challenged"]);
+  });
+
+  it('will determine a suitable yoga style for the user', function() {
+    var newQuiz = new Quiz(["a", "b", "a", "c", "d", "a"]);
+    expect(newQuiz.quizResult()).to.equal(true);
+  });
+});
+
 
 
 
