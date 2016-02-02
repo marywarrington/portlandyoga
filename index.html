@@ -2,7 +2,9 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-1.12.0.js"></script>
+    <script src="js/scripts.js"></script>
     <title>Yoga!</title>
   </head>
   <body>
@@ -21,38 +23,46 @@
     <div class="container">
       <h1>Portland Session Selector</h1>
       <p>Please select your preferences below: </p>
-      <form class="form-horizontal">
+      <form class="form-horizontal" id="addSession">
         <div class="form-group">
-          <label for="location">Location:</label>
-          <select class="input-lg" name="location">
-            <option value="nw">Northwest</option>
-            <option value="sw">Southwest</option>
-            <option value="ne">Northeast</option>
-            <option value="se">Southeast</option>
+          <label for="studio">Location:</label>
+          <select id="studio" class="input-lg" name="location">
+            <option value="Yoga Union">Yoga Union</option>
+            <option value="Yoga Pearl">Yoga Pearl</option>
+            <option value="Love Hive Yoga">Love Hive Yoga</option>
+            <option value="People's Yoga">People's Yoga</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="time">Time:</label>
-          <select class="input-lg" name="location">
-            <option value="am">AM</option>
-            <option value="pm">PM</option>
+          <label for="level">Time:</label>
+          <select id="level" class="input-lg" name="location">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
           </select>
         </div>
         <div class="form-group">
           <label for="style">Style:</label>
-          <select class="input-lg" name="location">
+          <select id="style" class="input-lg" name="location">
             <option value="yin">Yin</option>
             <option value="hatha">Hatha</option>
             <option value="vinyasa">Vinyasa</option>
           </select>
         </div>
+        <div class="form-group">
+            <label for="className">Class Name:</label>
+            <input type="text" class="form-control" id="className">
+        </div>
+        <div class="form-group">
+            <label for="instructor">Instructor:</label>
+            <input type="text" class="form-control" id="instructor">
+        </div>
 
-        <button type="submit" name="button" class="btn btn-primary btn-lg">Find a class</button>
+        <button type="submit" name="button" class="btn btn-primary btn-lg">Add a session</button>
       </form>
 
       <div class="output">
-        <ul>
-          <span id="result"></span>
+        <ul id="result">
         </ul>
       </div>
     </div>

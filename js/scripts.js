@@ -9,6 +9,21 @@ var Session = function(studio, level, style, className, instructor) {
 Session.prototype.displayInfo = function() {
   return this.studio + ", " + this.className + ", " + this.instructor;
 }
+
+$(document).ready(function(){
+  $("form#addSession").submit(function(event){
+    event.preventDefault();
+  var studio = $("select#studio").val();
+  var level = $("select#level").val();
+  var style = $("select#style").val();
+  var className = $("input#className").val();
+  var instructor = $("input#instructor").val();
+// debugger;
+  var newSession = new Session(studio, level, style, className, instructor);
+
+  $("ul#result").append("<li>" + newSession.displayInfo() + "</li>");
+ });
+});
 // var Time = function(day, hour) {
 //   this.day = day;
 //   this.hour = hour;

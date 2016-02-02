@@ -19,6 +19,8 @@ describe('Session', function() {
 
 
 
+
+
 // describe('Location', function() {
 //   it("create an object with the appropriate properties", function() {
 //     var testLocation = new Location("Yoga Union", "SE", "2305 SE 50th Ave", "http://www.yogaunioncwc.com");
