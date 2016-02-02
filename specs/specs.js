@@ -14,6 +14,13 @@ describe('Session', function() {
   });
 });
 
+describe('User', function() {
+  it('will create an object with the user\'s properties', function(){
+    var newUser = new User("Carl McCoy", "carl@oneofthemccoys.com");
+    expect(newUser.fullName).to.equal("Carl McCoy");
+    expect(newUser.emailAddress).to.equal("carl@oneofthemccoys.com");
+  });
+});
 
 
 

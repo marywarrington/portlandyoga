@@ -40,3 +40,12 @@ h2 {
 #fullInfo {
   display: none;
 }
+
+#result li:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#signUpForm {
+  display: none;
+}

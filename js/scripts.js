@@ -8,8 +8,16 @@ var Session = function(studio, level, style, className, instructor) {
 
 Session.prototype.displayInfo = function() {
   return this.studio + ", " + this.className + ", " + this.instructor;
+
 }
 
+
+var User = function(fullName, emailAddress){
+  this.fullName = fullName;
+  this.emailAddress = emailAddress;
+}
+
+// User.prototype.acknowledge =
 
 $(document).ready(function(){
   $("form#addSession").submit(function(event){
@@ -19,26 +27,37 @@ $(document).ready(function(){
   var style = $("select#inputStyle").val();
   var className = $("input#inputClassName").val();
   var instructor = $("input#inputInstructor").val();
+  var fullName = $("input#inputFullName").val();
+  var emailAddress = $("input#inputEmailAddress").val();
 
   var newSession = new Session(studio, level, style, className, instructor);
   $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
    $(".sessionItem").last().click(function() {
-
-    //  debugger;
      //launch modal upon click
 
-     $('#myModal').modal('show');
+     $('#myModal').modal('toggle');
+    //  $('#myModal').addClass('modal-backdrop');
      $("#fullInfo").show(); //within the modal, show #fullInfo
      $("#studio").text(newSession.studio); //within the modal, populate #studio
      $("#level").text(newSession.level); //within the modal, populate #level
      $("#style").text(newSession.style); //within the modal, populate #style
      $("#className").text(newSession.className); //within the modal, populate #className
      $("#instructor").text(newSession.instructor); //within the modal, populate #instructor
+     $("#signUp").click(function() {
+       $("div#signUpForm").show();
+     });
+   });
   });
- });
 });
 
-// data-toggle='modal' data-target='#myModal'
+// $(document).on('click', function(event) {
+//   if (!$(event.target).closest('#myModal').length) {
+//     $('#myModal').modal('hide');
+//   }
+// });
+
+
+
 // var Time = function(day, hour) {
 //   this.day = day;
 //   this.hour = hour;
