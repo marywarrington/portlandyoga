@@ -51,6 +51,8 @@ Quiz.prototype.quizResult = function() {
   } else {
     this.winningLetter = "d";
   }
+
+  return this.winningLetter;
 }
 
 
@@ -62,7 +64,7 @@ $(document).ready(function(){
   var style = $("select#inputStyle").val();
   var className = $("input#inputClassName").val();
   var instructor = $("input#inputInstructor").val();
-debugger;
+
   var newSession = new Session(studio, level, style, className, instructor);
   $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
    $(".sessionItem").last().click(function() {
@@ -74,6 +76,17 @@ debugger;
      $("#instructor").text(newSession.instructor);
   });
  });
+
+ $("form#styleQuiz").submit(function(event) {
+   event.preventDefault();
+
+   if (this.winningLetter === "a") {
+     ("#result1").show();
+   } else if (this.winningLetter === "b") {
+
+   }
+ });
+
 });
 
 // quiz page
