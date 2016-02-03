@@ -77,12 +77,15 @@ $(document).ready(function(){
   });
  });
 
+// QUIZ PAGE
 // We are working here:
  $("form#styleQuiz").submit(function(event) {
    event.preventDefault();
-
 //Add variable for array collected from quiz
-   var newQuiz = new Quiz(somethingin here)
+ var collectedArray = [
+
+ ]
+   var newQuiz = new Quiz(something in here)
 //How do we run the prototype below?
    newQuiz.quizResult()
 
@@ -100,7 +103,7 @@ our if/else statements
 
 });
 
-// quiz page
+
 
 // var Time = function(day, hour) {
 //   this.day = day;
