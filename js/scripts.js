@@ -1,9 +1,13 @@
+var idCounter = 0;
+
 var Session = function(studio, level, style, className, instructor) {
   this.studio = studio;
   this.level = level;
   this.style = style;
   this.className = className;
   this.instructor = instructor;
+  idCounter++;
+  this.id = idCounter;
 }
 
 Session.prototype.displayInfo = function() {
@@ -75,12 +79,11 @@ $(document).ready(function(){
   var instructor = $("input#inputInstructor").val();
 
   var newSession = new Session(studio, level, style, className, instructor);
-  $("#classTable").append("<tr class='sessionItem'>" + "<td>" + newSession.studio + "</td>" + "<td>" + newSession.className + "</td>" + "<td>" + newSession.instructor + "</td>" + "</tr>");
+  $("#classTable").append("<tr class='active sessionItem' id='sessionItem_" + newSession.id + "'>" + "<td>" + newSession.studio + "</td>" + "<td>" + newSession.className + "</td>" + "<td>" + newSession.instructor + "</td>" + "</tr>");
 
   // $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
    $(".sessionItem").last().click(function() {
      //launch modal upon click
-
      $('#myModal').modal('toggle');
     //  $('#myModal').addClass('modal-backdrop');
      $("#fullInfo").show(); //within the modal, show #fullInfo
@@ -92,11 +95,12 @@ $(document).ready(function(){
      $("#signUp").click(function() {
        $("div#signUpForm").show();
        $("#signUp").hide();
-       //breaks here
        $("#ackButton").click(function() {
          var fullName = $("input#inputFullName").val();
          var emailAddress = $("input#inputEmailAddress").val();
          var newUser = new User(fullName, emailAddress);
+        //  $(".sessionItem").addClass('success');
+         $("#sessionItem_" + newSession.id).addClass('success');
 
          $("div#acknowledgement").show();
          $("#ackName").text(newUser.fullName);

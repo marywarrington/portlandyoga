@@ -70,3 +70,16 @@ h2 {
 #result1, #result2, #result3, #result4 {
   display: none;
 }
+
+#classTable {
+  width: 80%;
+  margin-right: auto;
+}
+
+#tableTitles th {
+  text-align: center;
+}
+
+.sessionItem {
+  text-align: center;
+}
