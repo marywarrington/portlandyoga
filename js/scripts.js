@@ -15,7 +15,6 @@ Session.prototype.displayInfo = function() {
 
 }
 
-
 var User = function(fullName, emailAddress){
   this.fullName = fullName;
   this.emailAddress = emailAddress;
@@ -101,7 +100,6 @@ $(document).ready(function(){
          var newUser = new User(fullName, emailAddress);
         //  $(".sessionItem").addClass('success');
          $("#sessionItem_" + newSession.id).addClass('success');
-
          $("div#acknowledgement").show();
          $("#ackName").text(newUser.fullName);
          $("#ackClass").text(newSession.className);
@@ -111,6 +109,10 @@ $(document).ready(function(){
        });
      });
    });
+
+   $("#addSession").each(function(){
+    this.reset();
+    });
   });
 
   // $("form#styleQuiz").submit(function(event) {
