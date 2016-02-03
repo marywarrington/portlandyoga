@@ -1,0 +1,38 @@
+body {
+  font-family: serif;
+  background-color: #e6e6e6;
+  padding-top: 150px;
+}
+
+header {
+  text-align: center;
+}
+
+.navbar {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#main-content {
+  padding-left: 70px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: #337ab7;
+}
+
+.form-group label {
+  font-size: 20px;
+}
+
+#result1, #result2, #result3, #result4 {
+  padding-top: 50px;
+  display: none;
+}
+
+p {
+  font-size: 20px;
+}

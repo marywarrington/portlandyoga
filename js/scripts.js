@@ -29,18 +29,17 @@ Quiz.prototype.quizResult = function() {
   var cLetter = 0;
   var dLetter = 0;
 
-  for(i = 0; i < this.quizArray.length; i++) {
-    if (i === "a") {
-      aLetter += 1;
-    }else if (i === "b") {
-      bLettter += 1;
-    }else if (i === "c") {
-      cLetter += 1;
-    }else {
-      dLetter += 1;
+  for(var i = 0; i < this.quizArray.length; i++) {
+    if (this.quizArray[i] === "a") {
+      aLetter++;
+    } else if (this.quizArray[i] === "b") {
+      bLetter++;
+    } else if (this.quizArray[i] === "c") {
+      cLetter++;
+    } else if (this.quizArray[i] === "d") {
+      dLetter++;
     }
   }
-
   var newArray = [aLetter, bLetter, cLetter, dLetter];
   var max = newArray[0];
   var maxIndex = 0;
@@ -50,6 +49,7 @@ Quiz.prototype.quizResult = function() {
       maxIndex = i;
       max = newArray[i];
     }
+
   }
   if (maxIndex === 0) {
     this.winningLetter = "a";
@@ -62,7 +62,7 @@ Quiz.prototype.quizResult = function() {
   }
 
   return this.winningLetter;
-}
+  }
 
 
 $(document).ready(function(){
@@ -106,25 +106,37 @@ $(document).ready(function(){
    });
   });
 
-  // $("form#styleQuiz").submit(function(event) {
-  //   event.preventDefault();
-  // //Add variable for array collected from quiz
-  // var collectedArray = [
-  //
-  // ]
-  //   var newQuiz = new Quiz(something in here)
-  // //How do we run the prototype below?
-  //   newQuiz.quizResult()
-  //
-  // our if/else statements
-  //   if (this.winningLetter === "a") {
-  //     $("#result1").show();
-  //   } else if (this.winningLetter === "b") {
-  //     $("#result2").show();
-  //   } else if (this.winningLetter === "c") {
-  //     $("#result3").show();
-  //   } else {
-  //    $("#result4").show();
-  //    }
-  // });
+  $("form#styleQuiz").submit(function(event) {
+    event.preventDefault();
+  //Add variable for array collected from quiz
+    var quest1 = $("#question1 input[type='radio']:checked").val();
+    var quest2 = $("#question2 input[type='radio']:checked").val();
+    var quest3 = $("#question3 input[type='radio']:checked").val();
+    var quest4 = $("#question4 input[type='radio']:checked").val();
+    var quest5 = $("#question5 input[type='radio']:checked").val();
+    var quest6 = $("#question6 input[type='radio']:checked").val();
+
+    var answerArray = [quest1, quest2, quest3, quest4, quest5, quest6];
+    console.log(answerArray);
+    // debugger;
+    for (var i = 0; i < answerArray.length; i++) {
+      if (answerArray[i] === undefined) {
+        alert("Please be sure every field in the form has an answer.");
+        return false;
+      }
+    }
+    var newQuiz = new Quiz(answerArray);
+
+    if (newQuiz.quizResult() === "a") {
+      $("#result1").show();
+    } else if (newQuiz.quizResult() === "b") {
+      $("#result2").show();
+    } else if (newQuiz.quizResult() === "c") {
+      $("#result3").show();
+    } else if (newQuiz.quizResult() === "d"){
+     $("#result4").show();
+   } else {
+     alert("I'm Broken!")
+   }
+  });
 });

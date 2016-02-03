@@ -29,9 +29,10 @@ describe('Quiz', function() {
   });
 
   it('will determine a suitable yoga style for the user', function() {
-    var newQuiz = new Quiz(["a", "b", "a", "c", "d", "a"]);
-    expect(newQuiz.quizResult()).to.equal("a");
+    var newQuiz = new Quiz(["a", "b", "b", "c", "c", "c"]);
+    expect(newQuiz.quizResult()).to.equal("c");
   });
+
 });
 
 

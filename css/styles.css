@@ -31,6 +31,7 @@ h2 {
 
 .form-horizontal {
   margin: 15px;
+  width: 60%;
 }
 
 .form-group label {
@@ -52,10 +53,4 @@ h2 {
 
 #inputClassName, #inputInstructor {
   width: 50%
-}
-
-
-/*Hide quiz results divs*/
-#result1, #result2, #result3, #result4 {
-  display: none;
 }

@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/quizstyles.css">
     <script src="js/jquery-1.12.0.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
@@ -19,12 +19,12 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" id="main-content">
     <h1>Yoga Style Quiz</h1>
     <h2>Answer the questions below to be matched with a yoga style that best fits your needs</h2>
     <form class="form-horizontal" id="styleQuiz">
 
-      <div class="form-group">
+      <div id="question1" class="form-group">
         <label for="question1">1. What is your level of experience with yoga?</label>
           <div class="radio">
             <label><input type="radio" name="question1" value="a">I wear yoga pants but I've never attended a class</label>
@@ -40,7 +40,7 @@
           </div>
       </div>
 
-      <div class="form-group">
+      <div id="question2" class="form-group">
         <label for="question2">2. What is your level of fitness?</label>
           <div class="radio">
             <label><input type="radio" name="question2" value="a">I don't like to sweat.</label>
@@ -57,7 +57,7 @@
       </div>
 
 
-      <div class="form-group">
+      <div id="question3" class="form-group">
         <label for="question3">3. Would you like to incorporate spirituality into your practice?</label>
           <div class="radio">
             <label><input type="radio" name="question3" value="a">No, I want to keep it basic</label>
@@ -73,7 +73,7 @@
           </div>
       </div>
 
-      <div class="form-group">
+      <div id="question4" class="form-group">
         <label for="question4">4. Do you want to hold poses or have a faster flow?</label>
           <div class="radio">
             <label><input type="radio" name="question4" value="a">Slow pace is good. I like to hold poses and build strength.</label>
@@ -89,8 +89,8 @@
           </div>
       </div>
 
-      <div class="form-group">
-        <label for="question5">5. Do you want to be more adventurous with your yoga practice?</label>
+      <div id="question5" class="form-group">
+        <label for="question5">5. Do you like repetition or do want to be more adventurous with your yoga practice?</label>
           <div class="radio">
             <label><input type="radio" name="question5" value="a">No, I have enough adventure in my life. Yoga is for relaxing.</label>
           </div>
@@ -105,7 +105,7 @@
           </div>
       </div>
 
-      <div class="form-group">
+      <div id="question6" class="form-group">
         <label for="question 6">6. How do you want to feel when you leave yoga class?</label>
           <div class="radio">
             <label><input type="radio" name="question 6" value="a">Peaceful and restored.</label>
