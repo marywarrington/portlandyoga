@@ -7,7 +7,7 @@ var Session = function(studio, level, style, className, instructor) {
 }
 
 Session.prototype.displayInfo = function() {
-  return this.studio + ", " + this.className + ", " + this.instructor;
+  return this.studio + ", " + this.className + ", with " + this.instructor;
 
 }
 
@@ -75,7 +75,9 @@ $(document).ready(function(){
   var instructor = $("input#inputInstructor").val();
 
   var newSession = new Session(studio, level, style, className, instructor);
-  $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
+  $("#classTable").append("<tr class='sessionItem'>" + "<td>" + newSession.studio + "</td>" + "<td>" + newSession.className + "</td>" + "<td>" + newSession.instructor + "</td>" + "</tr>");
+
+  // $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
    $(".sessionItem").last().click(function() {
      //launch modal upon click
 
@@ -89,6 +91,7 @@ $(document).ready(function(){
      $("#instructor").text(newSession.instructor); //within the modal, populate #instructor
      $("#signUp").click(function() {
        $("div#signUpForm").show();
+       $("#signUp").hide();
        //breaks here
        $("#ackButton").click(function() {
          var fullName = $("input#inputFullName").val();

@@ -62,8 +62,16 @@
           <button type="submit" name="button" class="btn btn-primary btn-lg">Add a session</button>
         </form>
         <div class="output">
-          <ul id="result">
-          </ul>
+        <table id="classTable" class="table table-condensed">
+          <tr id="tableTitles" class="tableHeader">
+            <th>Studio Name</th>
+            <th>Class Title</th>
+            <th>Teacher Name</th>
+          </tr>
+          <!-- <ul id="result">
+          </ul> -->
+        </table>
+        </div>
           <div data-toggle="modal" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -72,13 +80,18 @@
                   <h4 class="modal-title" id="myModalLabel">Class Information</h4>
                 </div>
                 <div data-toggle="modal" class="modal-body">
-                  <div id="fullInfo">
-                    <p id="practiceInfo"></p>
-                    <p>Studio: <span id='studio'></span></p>
-                    <p>Level: <span id='level'></span></p>
-                    <p>Style: <span id='style'></span></p>
-                    <p>Class Name: <span id='className'></span></p>
-                    <p>Instructor: <span id='instructor'></span></p>
+                  <div id="fullInfo" class="container">
+                    <div>
+                      <p id="practiceInfo"></p>
+                      <p>Studio: <span id='studio'></span></p>
+                      <p>Level: <span id='level'></span></p>
+                      <p>Style: <span id='style'></span></p>
+                      <p>Class Name: <span id='className'></span></p>
+                      <p>Instructor: <span id='instructor'></span></p>
+                    </div>
+                    <div id="om">
+                      <img src="img/om.jpg" alt="om symbol">
+                    </div>
                   </div>
                   <div id="signUpForm">
                     <form id="ackSignUp">
@@ -104,7 +117,8 @@
                 </div>
               </div>
             </div>
-          </div> <!-- modal end tag --->
+          </div>
+         <!-- modal end tag --->
 <!-- Content divider from Tuesday -->
   </body>
 </html>
