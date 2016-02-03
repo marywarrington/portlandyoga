@@ -27,8 +27,6 @@ $(document).ready(function(){
   var style = $("select#inputStyle").val();
   var className = $("input#inputClassName").val();
   var instructor = $("input#inputInstructor").val();
-  var fullName = $("input#inputFullName").val();
-  var emailAddress = $("input#inputEmailAddress").val();
 
   var newSession = new Session(studio, level, style, className, instructor);
   $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
@@ -45,6 +43,19 @@ $(document).ready(function(){
      $("#instructor").text(newSession.instructor); //within the modal, populate #instructor
      $("#signUp").click(function() {
        $("div#signUpForm").show();
+       //breaks here
+       $("#ackButton").click(function() {
+         var fullName = $("input#inputFullName").val();
+         var emailAddress = $("input#inputEmailAddress").val();
+         var newUser = new User(fullName, emailAddress);
+
+         $("div#acknowledgement").show();
+         $("#ackName").text(newUser.fullName);
+         $("#ackClass").text(newSession.className);
+         $("#ackStudio").text(newSession.studio);
+         $("div#signUpForm").hide();
+         $("div#fullInfo").hide();
+       });
      });
    });
   });

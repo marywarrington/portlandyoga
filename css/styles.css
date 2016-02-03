@@ -37,15 +37,11 @@ h2 {
   font-weight: bolder;
 }
 
-#fullInfo {
+#fullInfo, #acknowledgement, #signUpForm {
   display: none;
 }
 
 #result li:hover {
   cursor: pointer;
   font-weight: bold;
-}
-
-#signUpForm {
-  display: none;
 }

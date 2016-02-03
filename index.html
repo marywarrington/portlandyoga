@@ -35,7 +35,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="level">Time:</label>
+            <label for="level">Level:</label>
             <select id="inputLevel" class="input-lg" name="location">
               <option value="Beginner">Beginner</option>
               <option value="Intermediate">Intermediate</option>
@@ -81,17 +81,21 @@
                     <p>Instructor: <span id='instructor'></span></p>
                   </div>
                   <div id="signUpForm">
-                    <form>
+                    <form id="ackSignUp">
                       <div class="form-group">
                           <label for="fullName">Full Name:</label>
-                          <input type="text" class="form-control" id="fullName">
+                          <input type="text" class="form-control" id="inputFullName">
                       </div>
                       <div class="form-group">
                           <label for="userEmail">Email Address:</label>
-                          <input type="text" class="form-control" id="userEmail">
+                          <input type="text" class="form-control" id="inputUserEmail">
                       </div>
-                      <button type="submit" name="button" class="btn btn-primary btn-sm">Submit</button>
+                      <button type="submit" id="ackButton" name="button" class="btn btn-primary btn-sm">Submit</button>
                     </form>
+                  </div>
+                  <div id="acknowledgement">
+                    <p>Thanks, <span id='ackName'></span>!</p>
+                    <p>You've just signed up for <span id='ackClass'></span> at <span id='ackStudio'></span>.</p>
                   </div>
                 </div>
                 <div data-toggle="modal" class="modal-footer">
