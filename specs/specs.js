@@ -30,7 +30,7 @@ describe('Quiz', function() {
 
   it('will determine a suitable yoga style for the user', function() {
     var newQuiz = new Quiz(["a", "b", "a", "c", "d", "a"]);
-    expect(newQuiz.quizResult()).to.equal(true);
+    expect(newQuiz.quizResult()).to.equal("a");
   });
 });
 

@@ -29,7 +29,7 @@ Quiz.prototype.quizResult = function() {
   var cLetter = 0;
   var dLetter = 0;
 
-  for(i = 0; i < this.quizArray.length(); i++) {
+  for(i = 0; i < this.quizArray.length; i++) {
     if (i === "a") {
       aLetter += 1;
     }else if (i === "b") {
@@ -105,80 +105,26 @@ $(document).ready(function(){
      });
    });
   });
+
+  // $("form#styleQuiz").submit(function(event) {
+  //   event.preventDefault();
+  // //Add variable for array collected from quiz
+  // var collectedArray = [
+  //
+  // ]
+  //   var newQuiz = new Quiz(something in here)
+  // //How do we run the prototype below?
+  //   newQuiz.quizResult()
+  //
+  // our if/else statements
+  //   if (this.winningLetter === "a") {
+  //     $("#result1").show();
+  //   } else if (this.winningLetter === "b") {
+  //     $("#result2").show();
+  //   } else if (this.winningLetter === "c") {
+  //     $("#result3").show();
+  //   } else {
+  //    $("#result4").show();
+  //    }
+  // });
 });
-
-// $(document).on('click', function(event) {
-//   if (!$(event.target).closest('#myModal').length) {
-//     $('#myModal').modal('hide');
-//   }
-// });
-
- });
-
-// QUIZ PAGE
-// We are working here:
- $("form#styleQuiz").submit(function(event) {
-   event.preventDefault();
-//Add variable for array collected from quiz
- var collectedArray = [
-
- ]
-   var newQuiz = new Quiz(something in here)
-//How do we run the prototype below?
-   newQuiz.quizResult()
-
-our if/else statements
-   if (this.winningLetter === "a") {
-     $("#result1").show();
-   } else if (this.winningLetter === "b") {
-     $("#result2").show();
-   } else if (this.winningLetter === "c") {
-     $("#result3").show();
-   } else {
-    $("#result4").show();
-    }
- });
-
-});
-
-
-
-// var Time = function(day, hour) {
-//   this.day = day;
-//   this.hour = hour;
-// }
-//
-// var SessionsArray = function(newArray) {
-//     this.newArray = [];
-// }
-//
-// var sessionsArray = [
-//   {
-//     Location.studioName: "Yoga Union",
-//     Location.quadrant: "SE",
-//     style: "Yin",
-//     Time.day:"Tuesday",
-//     Time.hour: 13
-//   },
-//   {
-//     Location.studioName: "Yoga Pearl",
-//     Location.quadrant: "NW",
-//     style: "Vinyasa",
-//     Time.day:"Wednesday",
-//     Time.hour: 15
-//   },
-//   {
-//     Location.studioName: "Yoga on Yamhill",
-//     Location.quadrant: "SW",
-//     style: "Hatha",
-//     Time.day:"Friday",
-//     Time.hour: 9
-//   },
-//   {
-//     Location.studioName: "Love Hive Yoga",
-//     Location.quadrant: "NE",
-//     style: "Yin",
-//     Time.day:"Sunday",
-//     Time.hour: 18
-//   },
-// ];
