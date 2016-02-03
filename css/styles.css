@@ -11,13 +11,18 @@ header {
   text-align: center;
 }
 
-p{
+#note{
   font-size: 15px;
+}
+
+p {
+  font-size: 20px;
 }
 
 h1 {
   font-size: 2.5em;
   font-weight: bolder;
+  color: #337ab7
 }
 
 h2 {
@@ -44,4 +49,13 @@ h2 {
 #result li:hover {
   cursor: pointer;
   font-weight: bold;
+
+#inputClassName, #inputInstructor {
+  width: 50%
+}
+
+
+/*Hide quiz results divs*/
+#result1, #result2, #result3, #result4 {
+  display: none;
 }
