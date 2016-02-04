@@ -28,11 +28,24 @@ h1 {
   font-size: 20px;
 }
 
-#result1, #result2, #result3, #result4 {
+#result1, #result2, #result3, #result4, #resultsWrapper{
   padding-top: 50px;
   display: none;
 }
 
+#resultsWrapper a, #resultsWrapper a:hover {
+  color: #fff;
+}
+
+
 p {
   font-size: 20px;
+}
+
+#quizSubmit {
+  color: #fff;
+}
+
+#quizSubmit:hover {
+  color: #fff;
 }

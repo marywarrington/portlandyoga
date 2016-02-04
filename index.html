@@ -22,66 +22,81 @@
     </nav>
     <div id="main-content">
       <div class="container">
-        <h1>Portland Class Session List</h1>
-        <h2>Add a class to our list of Portland yoga classes using the inputs below: </h2>
-        <form class="form-horizontal" id="addSession">
-          <div class="form-group">
-            <label for="studio">Location:</label>
-            <select id="inputStudio" class="input-lg" name="location">
-              <option value="Yoga Union">Yoga Union</option>
-              <option value="Yoga Pearl">Yoga Pearl</option>
-              <option value="Love Hive Yoga">Love Hive Yoga</option>
-              <option value="People's Yoga">People's Yoga</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="level">Level:</label>
-            <select id="inputLevel" class="input-lg" name="location">
-              <option value="Beginner">Beginner</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Advanced">Advanced</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="style">Style:</label>
-            <select id="inputStyle" class="input-lg" name="location">
-              <option value="Yin">Yin</option>
-              <option value="Hatha">Hatha</option>
-              <option value="Vinyasa">Vinyasa</option>
-              <option value="Bikram">Bikram</option>
-              <option value="Ashtanga">Ashtanga</option>
-            </select>
-              <p id="note">If you don't know which style you'd like to take try taking our <a href="quiz.html">style quiz</a>!</p>
-          </div>
-          <div class="form-group">
-              <label for="className">Class Name:</label>
-              <input type="text" class="form-control" id="inputClassName">
-          </div>
-          <div class="form-group">
-              <label for="instructor">Instructor:</label>
-              <input type="text" class="form-control" id="inputInstructor">
-          </div>
-          <button type="submit" name="button" class="btn btn-primary btn-lg">Add a session</button>
-        </form>
-<!-- Page Table -->
-        <div class="output">
-        <table id="classTable" class="table table-hover table-condensed">
-          <thead>
-            <tr id="tableTitles" class="tableHeader">
-              <th>Studio Name</th>
-              <th>Class Title</th>
-              <th>Teacher Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class='sessionItem' id="sessionItem_1">
-              <td>Love Hive Yoga</td>
-              <td>Hive Flow</td>
-              <td>Jessica Garay</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="thesis">
+          <h2>A wonderful, beautiful thesis statement will go here.</h2>
         </div>
+      <div class="sessionDescript">
+        <h1>Portland Class Session List</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h2> Add a Class </h2>
+          <form class="form-horizontal" id="addSession">
+            <div class="form-group">
+              <label for="studio">Location:</label>
+              <select id="inputStudio" class="form-control" name="location">
+                <option value="Yoga Union">Yoga Union</option>
+                <option value="Yoga Pearl">Yoga Pearl</option>
+                <option value="Love Hive Yoga">Love Hive Yoga</option>
+                <option value="People's Yoga">People's Yoga</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="level">Level:</label>
+              <select id="inputLevel" class="form-control" name="location">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="style">Style:</label>
+              <select id="inputStyle" class="form-control" name="location">
+                <option value="Yin">Yin</option>
+                <option value="Hatha">Hatha</option>
+                <option value="Vinyasa">Vinyasa</option>
+                <option value="Bikram">Bikram</option>
+                <option value="Ashtanga">Ashtanga</option>
+              </select>
+                <p id="note">If you don't know which style you'd like to try, take our <a href="quiz.html">style quiz</a>!</p>
+            </div>
+            <div class="form-group">
+                <label for="className">Class Name:</label>
+                <input type="text" class="form-control" id="inputClassName">
+            </div>
+            <div class="form-group">
+                <label for="instructor">Instructor:</label>
+                <input type="text" class="form-control" id="inputInstructor">
+            </div>
+            <button type="submit" name="button" class="btn btn-primary btn-lg">Add a session</button>
+          </form>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="output">
+            <h2> Class Info </h2>
+          <table id="classTable" class="table table-hover table-condensed">
+            <thead>
+              <tr id="tableTitles" class="tableHeader">
+                <th>Studio Name</th>
+                <th>Class Title</th>
+                <th>Teacher Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class='sessionItem' id="sessionItem_1">
+                <td>Love Hive Yoga</td>
+                <td>Hive Flow</td>
+                <td>Jessica Garay</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div> <!-- close row-->
+
+<!-- Page Table -->
+
 
 <!-- Modal -->
         <div data-toggle="modal" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="true">
@@ -96,11 +111,11 @@
                 <div id="fullInfo" class="container">
                   <div>
                     <p id="practiceInfo"></p>
-                    <p>Studio: <span id='studio'></span></p>
-                    <p>Level: <span id='level'></span></p>
-                    <p>Style: <span id='style'></span></p>
-                    <p>Class Name: <span id='className'></span></p>
-                    <p>Instructor: <span id='instructor'></span></p>
+                    <p><strong>Studio:</strong> <span id='studio'></span></p>
+                    <p><strong>Level:</strong> <span id='level'></span></p>
+                    <p><strong>Style:</strong> <span id='style'></span></p>
+                    <p><strong>Class Name:</strong> <span id='className'></span></p>
+                    <p><strong>Instructor:</strong> <span id='instructor'></span></p>
                   </div>
                   <div id="om">
                     <img src="img/om.jpg" alt="om symbol">
@@ -117,7 +132,7 @@
                         <label for="userEmail">Email Address:</label>
                         <input type="text" class="form-control" id="inputUserEmail">
                     </div>
-                    <button type="submit" id="ackButton" name="button" class="btn btn-primary btn-sm">Submit</button>
+                    <button type="submit" id="ackButton" name="button" class="btn btn-primary btn-md">Submit</button>
                   </form>
                 </div>
 

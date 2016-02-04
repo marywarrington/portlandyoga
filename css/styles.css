@@ -4,10 +4,23 @@ body {
   padding-top: 150px;
 }
 
-#main-content {
-  padding-left: 70px;
-}
 header {
+  text-align: center;
+}
+
+.navbar {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.thesis {
+  text-align: center;
+  padding: 50px 30px;
+  background-color: tan;
+  font-family: fantasy;
+}
+
+.sessionDescript {
   text-align: center;
 }
 
@@ -19,37 +32,54 @@ p {
   font-size: 20px;
 }
 
-h1 {
+/*h1 {
   font-size: 2.5em;
   font-weight: bolder;
   color: #337ab7
-}
+}*/
 
 h2 {
-  font-size: 25px;
+  text-align: center;
 }
 
-.form-horizontal {
-  margin: 15px;
-  width: 60%;
-}
 
 .form-group label {
   font-size: 20px;
 }
 
-.navbar {
+.form-control {
+  float: right;
+  /*margin-left: 10px;*/
+  padding-right: 20px;
   font-size: 20px;
-  font-weight: bolder;
 }
 
-#fullInfo, #acknowledgement, #signUpForm {
-  display: none;
+#addSession {
+  padding: 0 10px;
+}
+
+th {
+  font-size: 18px;
+}
+
+.sessionItem {
+  font-size: 18px;
 }
 
 #result li:hover {
   cursor: pointer;
   font-weight: bold;
+}
+
+#inputClassName, #inputInstructor {
+  width: 75%;
+}
+
+
+
+/*MODAL*/
+#fullInfo, #acknowledgement, #signUpForm {
+  display: none;
 }
 
 #om {
@@ -60,8 +90,4 @@ h2 {
 
 #om img {
   width: 200px;
-}
-
-#inputClassName, #inputInstructor {
-  width: 50%
 }

@@ -178,5 +178,9 @@ $(document).ready(function(){
    } else {
      alert("I'm Broken!")
    }
+
+   $('#main-content').hide();
+   $('#resultsWrapper').show();
+
   });
 });
