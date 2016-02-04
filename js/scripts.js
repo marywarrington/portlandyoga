@@ -1,16 +1,19 @@
+var idCounter = 0;
+
 var Session = function(studio, level, style, className, instructor) {
   this.studio = studio;
   this.level = level;
   this.style = style;
   this.className = className;
   this.instructor = instructor;
+  idCounter++;
+  this.id = idCounter;
 }
 
 Session.prototype.displayInfo = function() {
-  return this.studio + ", " + this.className + ", " + this.instructor;
+  return this.studio + ", " + this.className + ", with " + this.instructor;
 
 }
-
 
 var User = function(fullName, emailAddress){
   this.fullName = fullName;
@@ -66,44 +69,55 @@ Quiz.prototype.quizResult = function() {
 
 
 $(document).ready(function(){
+
+  $("#signUp").click(function() {
+    //  debugger;
+    $("div#signUpForm").show();
+    $("#signUp").hide();
+  });
+
   $("form#addSession").submit(function(event){
     event.preventDefault();
-  var studio = $("select#inputStudio").val();
-  var level = $("select#inputLevel").val();
-  var style = $("select#inputStyle").val();
-  var className = $("input#inputClassName").val();
-  var instructor = $("input#inputInstructor").val();
+    var studio = $("select#inputStudio").val();
+    var level = $("select#inputLevel").val();
+    var style = $("select#inputStyle").val();
+    var className = $("input#inputClassName").val();
+    var instructor = $("input#inputInstructor").val();
 
-  var newSession = new Session(studio, level, style, className, instructor);
-  $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
-   $(".sessionItem").last().click(function() {
-     //launch modal upon click
+    var newSession = new Session(studio, level, style, className, instructor);
+    $("#classTable").append("<tr class='sessionItem' id='sessionItem_" + newSession.id + "'>" + "<td>" + newSession.studio + "</td>" + "<td>" + newSession.className + "</td>" + "<td>" + newSession.instructor + "</td>" + "</tr>");
 
-     $('#myModal').modal('toggle');
-    //  $('#myModal').addClass('modal-backdrop');
-     $("#fullInfo").show(); //within the modal, show #fullInfo
-     $("#studio").text(newSession.studio); //within the modal, populate #studio
-     $("#level").text(newSession.level); //within the modal, populate #level
-     $("#style").text(newSession.style); //within the modal, populate #style
-     $("#className").text(newSession.className); //within the modal, populate #className
-     $("#instructor").text(newSession.instructor); //within the modal, populate #instructor
-     $("#signUp").click(function() {
-       $("div#signUpForm").show();
-       //breaks here
-       $("#ackButton").click(function() {
-         var fullName = $("input#inputFullName").val();
-         var emailAddress = $("input#inputEmailAddress").val();
-         var newUser = new User(fullName, emailAddress);
+  // $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
+    $(".sessionItem").last().click(function() {
+      //launch modal upon click
+      $('#myModal').modal('toggle');
+      //  $('#myModal').addClass('modal-backdrop');
+      $("#fullInfo").show(); //within the modal, show #fullInfo
+      $("#studio").text(newSession.studio); //within the modal, populate #studio
+      $("#level").text(newSession.level); //within the modal, populate #level
+      $("#style").text(newSession.style); //within the modal, populate #style
+      $("#className").text(newSession.className); //within the modal, populate #className
+      $("#instructor").text(newSession.instructor); //within the modal, populate #instructor
+      $("#ackButton").off();
+      $("#ackButton").click(function() {
+        var fullName = $("input#inputFullName").val();
+        var emailAddress = $("input#inputEmailAddress").val();
+        var newUser = new User(fullName, emailAddress);
+        $("#sessionItem_" + newSession.id).last().addClass('success');
+        console.log("#sessionItem_" + newSession.id);
+        $("div#acknowledgement").show();
+        $("#ackName").text(newUser.fullName);
+        $("#ackClass").text(newSession.className);
+        $("#ackStudio").text(newSession.studio);
+        $("div#signUpForm").hide();
+        $("div#fullInfo").hide();
+      });
+    });
 
-         $("div#acknowledgement").show();
-         $("#ackName").text(newUser.fullName);
-         $("#ackClass").text(newSession.className);
-         $("#ackStudio").text(newSession.studio);
-         $("div#signUpForm").hide();
-         $("div#fullInfo").hide();
-       });
-     });
-   });
+
+    $("#addSession").each(function(){
+      this.reset();
+    });
   });
 
   $("form#styleQuiz").submit(function(event) {

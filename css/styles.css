@@ -50,6 +50,17 @@ h2 {
 #result li:hover {
   cursor: pointer;
   font-weight: bold;
+}
+
+#om {
+  clear: none;
+  margin-left: 300px;
+  margin-top: -200px;
+}
+
+#om img {
+  width: 200px;
+}
 
 #inputClassName, #inputInstructor {
   width: 50%
