@@ -1,27 +1,39 @@
 body {
   font-family: serif;
-  background-color: #e6e6e6;
-  padding-top: 150px;
+  /*background-color: #e6e6e6;*/
+  padding-top: 190px;
 }
 
 header {
   text-align: center;
+  padding: 20px;
 }
 
 .navbar {
   font-size: 20px;
   font-weight: bolder;
+  color: #5F5449;
 }
 
-.thesis {
+.navbar a {
+  color: #869D7A;
+}
+
+/*.thesis h2 {
+  font-size: 50px;
+  color: #5F5449;
+  font-weight: bolder;
+}*/
+
+#sessionDescript {
+  text-align: center;
+}
+
+#thesis {
   text-align: center;
   padding: 50px 30px;
-  background-color: tan;
+  background-color: #C18383;
   font-family: fantasy;
-}
-
-.sessionDescript {
-  text-align: center;
 }
 
 #note{
@@ -30,16 +42,18 @@ header {
 
 p {
   font-size: 20px;
+  color: #5F5449;
 }
 
-/*h1 {
-  font-size: 2.5em;
-  font-weight: bolder;
-  color: #337ab7
-}*/
+h1 {
+  font-family: fantasy;
+  font-size: 2.3em;
+  color: #869D7A;
+}
 
 h2 {
   text-align: center;
+  color: #5F5449;
 }
 
 
@@ -75,6 +89,13 @@ th {
   width: 75%;
 }
 
+#sessionButton {
+  background-color: #869D7A;
+}
+
+.sessionDescript {
+  padding-top: 15px;
+}
 
 
 /*MODAL*/

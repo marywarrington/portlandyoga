@@ -12,7 +12,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <header>
-          <h1>Yoga Resources</h1>
+          <h1>Portland Yoga Resources</h1>
         </header>
         <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="index.html">Home</a></li>
@@ -22,11 +22,12 @@
     </nav>
     <div id="main-content">
       <div class="container">
-        <div class="thesis">
-          <h2>A wonderful, beautiful thesis statement will go here.</h2>
+        <div id="thesis">
+          <h2>Live.Breathe.Yoga.</h2>
         </div>
-      <div class="sessionDescript">
+      <div id="sessionDescript">
         <h1>Portland Class Session List</h1>
+        <p>Sign up for a class listed, or add a session of your own.</p>
       </div>
       <div class="row">
         <div class="col-sm-6">
@@ -68,26 +69,26 @@
                 <label for="instructor">Instructor:</label>
                 <input type="text" class="form-control" id="inputInstructor">
             </div>
-            <button type="submit" name="button" class="btn btn-primary btn-lg">Add a session</button>
+            <button type="submit" name="button" id="sessionButton" class="btn btn pull-right btn-primary btn-lg">Add a session</button>
           </form>
         </div>
 
         <div class="col-sm-6">
           <div class="output">
-            <h2> Class Info </h2>
+            <h2> Class Listings </h2>
           <table id="classTable" class="table table-hover table-condensed">
             <thead>
               <tr id="tableTitles" class="tableHeader">
                 <th>Studio Name</th>
-                <th>Class Title</th>
-                <th>Teacher Name</th>
+                <th>Level</th>
+                <th>Style Name</th>
               </tr>
             </thead>
             <tbody>
               <tr class='sessionItem' id="sessionItem_1">
                 <td>Love Hive Yoga</td>
-                <td>Hive Flow</td>
-                <td>Jessica Garay</td>
+                <td>Intermediate</td>
+                <td>Vinyasa</td>
               </tr>
             </tbody>
           </table>

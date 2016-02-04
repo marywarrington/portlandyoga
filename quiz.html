@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/quizstyles.css">
     <script src="js/jquery-1.12.0.js"></script>
     <script src="js/scripts.js"></script>
@@ -12,7 +13,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <header>
-          <h1>Yoga Resources</h1>
+          <h1>Portland Yoga Resources</h1>
         </header>
         <ul class="nav nav-tabs">
         <li role="presentation" class=""><a href="index.html">Home</a></li>
@@ -122,7 +123,7 @@
               <label><input type="radio" name="question 6" value="d">I want to feel like I was challenged and my practice improved.</label>
             </div>
         </div>
-        <button onClick="resultsjump" type="submit" name="button" class="btn btn-primary btn-lg">Find My Style</button>
+        <button onClick="resultsjump" type="submit" name="button" id="findStyle" class="btn btn-primary btn-lg">Find My Style</button>
       </form>
     </div>
 
@@ -151,7 +152,7 @@
       <p>Based on your answers you’re open-minded and athletic by nature and you perhaps have a deep connection to yoga already. You will probably enjoy Ashtanga which involves six established and strenuous pose sequences — the primary series, second series, third series, and so on — practiced sequentially as progress is made. Ashtangis move rapidly, flowing from one pose to the next with each inhale and exhale.</p>
     </div>
 
-    <button type="button" class="btn btn-primary btn-lg" name="sessions"><a href="index.html">Find a Class</a></button>
+    <button type="button" class="btn btn-primary btn-lg" id="findClass" name="sessions"><a href="index.html">Find a Class</a></button>
     <button type="button" class="btn btn-secondary btn-lg" name="retake"><a href="quiz.html">Take Quiz Again</a></button>
 
   </div>

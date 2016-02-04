@@ -85,7 +85,7 @@ $(document).ready(function(){
     var instructor = $("input#inputInstructor").val();
 
     var newSession = new Session(studio, level, style, className, instructor);
-    $("#classTable").append("<tr class='sessionItem' id='sessionItem_" + newSession.id + "'>" + "<td>" + newSession.studio + "</td>" + "<td>" + newSession.className + "</td>" + "<td>" + newSession.instructor + "</td>" + "</tr>");
+    $("#classTable").append("<tr class='sessionItem' id='sessionItem_" + newSession.id + "'>" + "<td>" + newSession.studio + "</td>" + "<td>" + newSession.level + "</td>" + "<td>" + newSession.style + "</td>" + "</tr>");
 
     $("#addSession").each(function(){
       this.reset();
