@@ -1,4 +1,4 @@
-var idCounter = 0;
+var idCounter = 3;
 
 var Session = function(studio, level, style, className, instructor) {
   this.studio = studio;
@@ -87,21 +87,23 @@ $(document).ready(function(){
     var newSession = new Session(studio, level, style, className, instructor);
     $("#classTable").append("<tr class='sessionItem' id='sessionItem_" + newSession.id + "'>" + "<td>" + newSession.studio + "</td>" + "<td>" + newSession.className + "</td>" + "<td>" + newSession.instructor + "</td>" + "</tr>");
 
-  // $("ul#result").append("<li class='sessionItem'>" + newSession.displayInfo() + "</li>");
-    $(".sessionItem").last().click(function() {
-      //launch modal upon click
-      $('#myModal').modal('toggle');
-      $('#signUp').show();
-      $("div#acknowledgement").hide();
+    $("#addSession").each(function(){
+      this.reset();
+    });
 
-      //  $('#myModal').addClass('modal-backdrop');
+
+    $(".sessionItem").last().on("click", function() {
+      // debugger;
+      $('#myModal').modal('toggle'); //launch modal upon click
+      $('#signUp').show(); //show signUp button
+      $("div#acknowledgement").hide(); //hide previous confirmation of signing up
       $("#fullInfo").show(); //within the modal, show #fullInfo
       $("#studio").text(newSession.studio); //within the modal, populate #studio
       $("#level").text(newSession.level); //within the modal, populate #level
       $("#style").text(newSession.style); //within the modal, populate #style
       $("#className").text(newSession.className); //within the modal, populate #className
       $("#instructor").text(newSession.instructor); //within the modal, populate #instructor
-      $("#ackButton").off();
+      $("#ackButton").off(); //disable ability to sign up again
       $("#ackButton").click(function() {
         var fullName = $("input#inputFullName").val();
         var emailAddress = $("input#inputEmailAddress").val();
@@ -116,11 +118,33 @@ $(document).ready(function(){
       });
     });
 
+  });
 
-    $("#addSession").each(function(){
-      this.reset();
+  $("#sessionItem_1").on("click", function() {
+    $('#myModal').modal('toggle'); //launch modal upon click
+    $('#signUp').show(); //show signUp button
+    $("div#acknowledgement").hide(); //hide previous confirmation of signing up
+    $("#fullInfo").show(); //within the modal, show #fullInfo
+    $("#studio").text("Love Hive Yoga"); //within the modal, populate #studio
+    $("#level").text("Intermediate"); //within the modal, populate #level
+    $("#style").text("Alignment Flow"); //within the modal, populate #style
+    $("#className").text("Hive Flow"); //within the modal, populate #className
+    $("#instructor").text("Jessica Garay"); //within the modal, populate #instructor
+    $("#ackButton").off(); //disable ability to sign up again
+    $("#ackButton").click(function() {
+      var fullName = $("input#inputFullName").val();
+      var emailAddress = $("input#inputEmailAddress").val();
+      var newUser = new User(fullName, emailAddress);
+      $("#sessionItem_1").last().addClass('success');
+      $("div#acknowledgement").show();
+      $("#ackName").text(newUser.fullName);
+      $("#ackClass").text("Hive Flow");
+      $("#ackStudio").text("Love Hive Yoga");
+      $("div#signUpForm").hide();
+      $("div#fullInfo").hide();
     });
   });
+
 
   $("form#styleQuiz").submit(function(event) {
     event.preventDefault();
