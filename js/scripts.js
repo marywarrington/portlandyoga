@@ -91,6 +91,9 @@ $(document).ready(function(){
     $(".sessionItem").last().click(function() {
       //launch modal upon click
       $('#myModal').modal('toggle');
+      $('#signUp').show();
+      $("div#acknowledgement").hide();
+
       //  $('#myModal').addClass('modal-backdrop');
       $("#fullInfo").show(); //within the modal, show #fullInfo
       $("#studio").text(newSession.studio); //within the modal, populate #studio
@@ -104,7 +107,6 @@ $(document).ready(function(){
         var emailAddress = $("input#inputEmailAddress").val();
         var newUser = new User(fullName, emailAddress);
         $("#sessionItem_" + newSession.id).last().addClass('success');
-        console.log("#sessionItem_" + newSession.id);
         $("div#acknowledgement").show();
         $("#ackName").text(newUser.fullName);
         $("#ackClass").text(newSession.className);

@@ -10,7 +10,7 @@ describe('Session', function() {
 
   it('will return the abbreviated class information', function() {
     var newSession = new Session("Yoga Union", "beginner", "yin", "Yin Yoga", "Dave Fink");
-    expect(newSession.displayInfo()).to.equal("Yoga Union, Yin Yoga, Dave Fink");
+    expect(newSession.displayInfo()).to.eql("Yoga Union, Yin Yoga, with Dave Fink");
   });
 });
 
